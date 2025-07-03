@@ -1,0 +1,19 @@
+# Unity
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+MemoryCaptures/
+UserSettings/
+
+# VS/JetBrains Rider
+.vs/
+.idea/
+*.sln
+*.csproj
+
+# OS
+.DS_Store
+Thumbs.db
