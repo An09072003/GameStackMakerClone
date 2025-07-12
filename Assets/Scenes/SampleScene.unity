@@ -777,6 +777,7 @@ MonoBehaviour:
   checkDistance: 1
   gameManager: {fileID: 2106859399}
   brickPrefab: {fileID: 3777927748185607932, guid: 2485cc3ba60e9344fad68eeca744ea56, type: 3}
+  visual: {fileID: 4538506950405413}
   canMove: 1
 --- !u!1 &2084344316
 GameObject:
@@ -43652,7 +43653,7 @@ Transform:
   m_GameObject: {fileID: 1665665944788573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 2.5, z: -25}
+  m_LocalPosition: {x: -3, y: 2.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

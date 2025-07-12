@@ -10,13 +10,14 @@ public class GridMovement : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject brickPrefab;
+    [SerializeField] private Transform visual; // phần hiển thị nhân vật (con của player)
 
     private float stackCount = 0;
     private float objectHigh = 0.3f;
     private bool isSliding = false;
     private Vector3 moveDirection;
 
-    public bool canMove = true; // dùng để chặn di chuyển sau khi về đích
+    public bool canMove = true;
     public float StackCount => stackCount;
 
     private void Update()
@@ -43,9 +44,10 @@ public class GridMovement : MonoBehaviour
             t.localPosition = new Vector3(0, stackCount * objectHigh, 0);
             stackCount++;
 
-            Vector3 pos = transform.position;
-            pos.y += objectHigh;
-            transform.position = pos;
+            // Tăng visual lên 0.3f
+            Vector3 visPos = visual.localPosition;
+            visPos.y += 0.3f;
+            visual.localPosition = visPos;
         }
 
         if (other.CompareTag("EmptyPipe") && stackCount > 0)
@@ -69,9 +71,10 @@ public class GridMovement : MonoBehaviour
 
             stackCount--;
 
-            Vector3 pos = transform.position;
-            pos.y -= objectHigh;
-            transform.position = pos;
+            // Hạ visual xuống 0.35f nhưng không thấp hơn 0
+            Vector3 visPos = visual.localPosition;
+            visPos.y = Mathf.Max(0, visPos.y - 0.3f);
+            visual.localPosition = visPos;
         }
 
         if (other.CompareTag("FinishLine"))
